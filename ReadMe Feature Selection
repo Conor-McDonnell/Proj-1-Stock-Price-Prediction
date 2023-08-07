@@ -1,0 +1,24 @@
+Feature Selection
+This ReadMe provides an overview of the feature selection process for three stocks: Apple, Boeing, and Nike. The code is written in Python and utilizes various libraries for data manipulation, visualization, and feature selection. The goal is to select the most relevant features for each stock to improve model performance.
+
+Data Preparation
+The initial step is to load the preprocessed data for each stock (stored in pickle files) into pandas DataFrames:
+
+apple_prep: DataFrame containing preprocessed Apple stock data.
+boeing_prep: DataFrame containing preprocessed Boeing stock data.
+nike_prep: DataFrame containing preprocessed Nike stock data.
+Next, the dataframes are split into training and test datasets for each stock. Four different time windows are used for splitting: one day, seven days, 30 days, and 90 days.
+
+Data Split
+Apple Stock
+One day split: Training data before '2021-05-10', and test data on '2021-05-10'.
+Seven days split: Training data before '2021-05-04', and test data on '2021-05-04'.
+30 days split: Training data before '2021-04-11', and test data on '2021-04-11'.
+90 days split: Training data before '2021-02-10', and test data on '2021-02-10'.
+The same process is applied for Boeing and Nike stocks.
+
+Feature Selector
+The code demonstrates the use of BorutaPy, a feature selection library, to select the most important features for the Apple stock. The selected features are stored in the cols_selected_boruta list.
+
+Manual Feature Selection
+In addition to the BorutaPy-selected features, a manual feature selection step is performed for the Apple stock. The cols_selected_boruta list contains the manually selected features.
